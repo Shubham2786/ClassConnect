@@ -1,0 +1,452 @@
+:root {
+  --bg-primary: #0D0D0D;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #141414;
+  
+  /* Orange Hierarchy System */
+  --orange-primary: #FF9000;
+  --orange-light: #FFD580;
+  --orange-deep: #FF6B00;
+  --orange-warning: #FF0000;
+  
+  /* Text Hierarchy */
+  --text-primary: #ffffff;
+  --text-secondary: #A0A0A0;
+  --text-muted: #666666;
+  
+  /* Subject Categories */
+  --subject-core: #FF9000;
+  --subject-lab: #FFD580;
+  --subject-elective: #FF6B00;
+  --subject-break: #A0A0A0;
+  --subject-exam: #FF0000;
+  
+  /* Attendance Actions */
+  --present-color: #00C853;
+  --present-hover: #00E676;
+  --present-border: #003B1F;
+  --absent-color: #FF3B3B;
+  --absent-hover: #D32F2F;
+  
+  /* UI Elements */
+  --border-color: #333333;
+  --gridline-color: #1A1A1A;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--gridline-color);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  color: var(--orange-primary) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-secondary) !important;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--orange-primary) !important;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  color: var(--text-primary);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 144, 0, 0.15);
+}
+
+.card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.card-body {
+  color: var(--text-primary) !important;
+}
+
+.card-title {
+  color: var(--text-primary) !important;
+}
+
+.card-text {
+  color: var(--text-primary) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--orange-primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+  color: #000 !important;
+}
+
+.btn-primary:hover {
+  background: var(--orange-deep);
+  transform: translateY(-1px);
+  color: #000 !important;
+}
+
+.btn-success {
+  background: var(--present-color);
+  border: 1px solid var(--present-border);
+  color: #fff !important;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 200, 83, 0.2);
+}
+
+.btn-success:hover {
+  background: var(--present-hover);
+  border-color: var(--present-border);
+  color: #fff !important;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: var(--absent-color);
+  border: none;
+  color: #fff !important;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(255, 59, 59, 0.2);
+}
+
+.btn-danger:hover {
+  background: var(--absent-hover);
+  color: #fff !important;
+  box-shadow: 0 0 8px rgba(255, 59, 59, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Forms */
+.form-control {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  background: var(--bg-primary);
+  border-color: var(--orange-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 144, 0, 0.25);
+}
+
+.form-select {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-label {
+  color: var(--text-primary) !important;
+}
+
+/* Tables */
+.table {
+  color: var(--text-primary) !important;
+}
+
+.table-dark {
+  --bs-table-bg: var(--bg-secondary);
+  --bs-table-border-color: var(--border-color);
+  --bs-table-color: var(--text-primary);
+}
+
+.table-dark td, .table-dark th {
+  color: var(--text-primary) !important;
+  border-color: var(--border-color);
+}
+
+/* Text utilities */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-primary {
+  color: var(--orange-primary) !important;
+}
+
+.text-success {
+  color: var(--subject-lab) !important;
+}
+
+.text-danger {
+  color: var(--orange-warning) !important;
+}
+
+/* Subject Categories */
+.subject-core {
+  color: var(--subject-core) !important;
+  font-weight: 600;
+}
+
+.subject-lab {
+  color: var(--subject-lab) !important;
+  font-weight: 500;
+}
+
+.subject-elective {
+  color: var(--subject-elective) !important;
+  font-weight: 500;
+}
+
+.subject-break {
+  color: var(--subject-break) !important;
+  font-weight: 400;
+}
+
+.subject-exam {
+  color: var(--subject-exam) !important;
+  font-weight: 700;
+}
+
+/* Time Slots */
+.time-label {
+  color: var(--orange-primary) !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.time-range {
+  color: var(--orange-primary) !important;
+  font-weight: 600;
+}
+
+/* List Groups */
+.list-group-item {
+  color: var(--text-primary) !important;
+  background-color: transparent !important;
+  border-color: var(--border-color) !important;
+}
+
+.list-group-item h6, .list-group-item .fw-bold {
+  color: var(--text-primary) !important;
+}
+
+/* Small text */
+small, .small {
+  color: var(--text-secondary) !important;
+}
+
+/* Progress bars */
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Badges */
+.badge {
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.badge.bg-info {
+  background-color: var(--subject-lab) !important;
+  color: #000 !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--subject-core) !important;
+  color: #000 !important;
+}
+
+.badge.bg-success {
+  background-color: var(--subject-lab) !important;
+  color: #000 !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--orange-light) !important;
+  color: #000 !important;
+}
+
+.badge.bg-danger {
+  background-color: var(--orange-warning) !important;
+  color: #fff !important;
+}
+
+/* Attendance Status Colors */
+.attendance-excellent { 
+  color: var(--present-color) !important;
+  background-color: var(--present-color) !important;
+}
+
+.attendance-good { 
+  color: var(--orange-light) !important;
+  background-color: var(--orange-light) !important;
+}
+
+.attendance-poor { 
+  color: var(--absent-color) !important;
+  background-color: var(--absent-color) !important;
+}
+
+/* Progress Bar Colors */
+.progress-bar.bg-success {
+  background-color: var(--present-color) !important;
+}
+
+.progress-bar.bg-warning {
+  background-color: var(--orange-light) !important;
+}
+
+.progress-bar.bg-danger {
+  background-color: var(--absent-color) !important;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  color: var(--orange-primary);
+}
+
+/* Alerts */
+.alert {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary) !important;
+}
+
+.alert-warning {
+  background-color: rgba(255, 213, 128, 0.1);
+  border-color: var(--orange-light);
+}
+
+.alert-success {
+  background-color: rgba(255, 213, 128, 0.1);
+  border-color: var(--subject-lab);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 1rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Toast Notifications */
+.toast {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Chart Customization */
+.recharts-wrapper {
+  background: transparent;
+}
+
+.recharts-cartesian-grid line {
+  stroke: var(--gridline-color);
+}
+
+.recharts-text {
+  fill: var(--text-secondary);
+}
+
+/* Button hover states */
+.btn-outline-primary {
+  color: var(--orange-primary) !important;
+  border-color: var(--orange-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--orange-primary) !important;
+  border-color: var(--orange-primary) !important;
+  color: #000 !important;
+}
+
+.btn-outline-danger {
+  color: var(--orange-warning) !important;
+  border-color: var(--orange-warning) !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--orange-warning) !important;
+  border-color: var(--orange-warning) !important;
+  color: #fff !important;
+}
+
+/* Quick Attendance Cards */
+.quick-attendance-card {
+  border-left: 4px solid var(--orange-primary);
+  transition: var(--transition);
+}
+
+.quick-attendance-card:hover {
+  border-left-color: var(--orange-deep);
+}
+
+/* Cursor pointer for clickable elements */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Toast-like feedback */
+.attendance-feedback {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--orange-primary);
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--orange-primary);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
